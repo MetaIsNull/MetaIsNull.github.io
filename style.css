@@ -1,0 +1,116 @@
+body {
+  background-color: #000;
+  color: #0f0;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.terminal-container {
+  text-align: center;
+  width: 80%;
+  max-width: 700px;
+}
+
+#terminal {
+  background-color: #111;
+  border: 2px solid #0f0;
+  padding: 20px;
+  height: 400px;
+  overflow-y: auto;
+  text-align: left;
+  white-space: pre-wrap;
+}
+
+#initButton, #redButton {
+  margin-top: 10px;
+  padding: 15px 40px;
+  font-size: 18px;
+  background-color: black;
+  color: #0f0;
+  border: 2px solid #0f0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#initButton:hover, #redButton:hover {
+  background-color: #0f0;
+  color: black;
+}
+
+#redButton {
+  color: red;
+  border-color: red;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.2; }
+  100% { opacity: 1; }
+}
+
+#depthBar {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  text-shadow: 0 0 5px #0f0;
+}
+
+.glitch {
+  animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+  0% { text-shadow: 2px 2px red; }
+  25% { text-shadow: -2px -2px blue; }
+  50% { text-shadow: 2px -2px lime; }
+  75% { text-shadow: -2px 2px magenta; }
+  100% { text-shadow: 2px 2px yellow; }
+}
+
+
+#blinking-cursor {
+  display: inline-block;
+  animation: blink 1s steps(2, start) infinite;
+  color: #0f0;
+  font-weight: bold;
+}
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+#manualOverride {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-family: monospace;
+  font-size: 1rem;
+  background-color: #111;
+  color: #0f0;
+  border: 1px solid #0f0;
+}
+
+
+#manualOverride {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-family: monospace;
+  font-size: 1rem;
+  background-color: #111;
+  color: #0f0;
+  border: 1px solid #0f0;
+  caret-color: #0f0;
+  animation: blinkInput 1s step-start infinite;
+}
+@keyframes blinkInput {
+  50% {
+    caret-color: transparent;
+  }
+}
